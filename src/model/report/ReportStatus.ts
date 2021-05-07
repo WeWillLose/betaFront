@@ -1,0 +1,3 @@
+export enum EReportStatus {
+  UNCHECKED = 'UNCHECKED',CHECKED = 'CHECKED',COMPLETED = 'COMPLETED',
+}

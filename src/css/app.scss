@@ -1,0 +1,49 @@
+// app global css in SCSS form
+.main_background{
+  background-color: $main;
+}
+.secondary_background{
+  background-color: $secondary;
+}
+.std_form_container{
+  min-width: 30%;
+  max-width: 75%;
+  background-color: $info;
+  border-radius: 10px;
+}
+
+.main_btn {
+  background-color: rgba($info,.2);
+  border: 2px solid rgba($infoBorder,.3);
+}
+.login_btn{
+  background-color: rgba($accent,.1);
+  border: 2px solid rgba($accentBorder,.3);
+}
+.login_btn_tmp{
+  background-color: transparent;
+  font-size: large;
+  color: white;
+}
+
+.user_menu{
+  background-color: transparentize(white,0.2);
+}
+.my-card{
+  width: 100%;
+  max-width: 500px;
+}
+.add_row_dialog{
+  min-width: 60%;
+}
+
+.gif_bg{
+  background-size: cover;
+  height: 100%;
+  padding:0;
+  margin:0;
+}
+.report_card_table_item{
+  width: 100%;
+  min-height: 150px;
+}
