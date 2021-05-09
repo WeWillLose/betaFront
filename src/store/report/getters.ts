@@ -66,7 +66,7 @@ const getters: GetterTree<ReportStateInterface, StateInterface> = {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        } else res['data']['tables'][t] = state[t]?.rows || [] as Record<string, unknown>[]
+        } else if(state.table_names.includes(t))  res['data']['tables'][t] = state[t]?.rows || [] as Record<string, unknown>[]
       } catch (e) {
         console.error(e)
       }
