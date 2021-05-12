@@ -26,7 +26,7 @@
                              label="Колво студентов"></q-input>
                   </div>
                   <div class="row q-gutter-md  q-ma-md">
-                    <q-input class="col-12 col-md" type="number" v-model="getEditedItem.mark5"
+                    <q-input min="0" class="col-12 col-md" type="number" v-model="getEditedItem.mark5"
                              label="Кол-во оценок 5"></q-input>
                     <q-input class="col-12 col-md" type="number" v-model="getEditedItem.mark4"
                              label="Кол-во оценок 4"></q-input>
@@ -91,8 +91,7 @@
             {{props.row.unsuccs}}
           </q-td>
           <q-td key="actions" :props="props" auto-width>
-            <q-btn color="blue" label="Редактировать" @click="showEditDialog(props.row)" size=sm
-                   no-caps></q-btn>
+            <q-btn color="blue" label="Редактировать" @click="showEditDialog(props.row)" size=sm no-caps></q-btn>
             <q-btn color="red" label="Удалить" @click="deleteItem(props.row)" size=sm no-caps></q-btn>
           </q-td>
         </q-tr>

@@ -6,6 +6,7 @@
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>
+          <q-btn dense color="primary" label="Добавить строку" @click="showAddRowDialog" no-caps></q-btn>
         </div>
         <div class="q-pa-sm q-gutter-sm">
           <q-dialog v-model="show_dialog">
@@ -19,8 +20,8 @@
                 <q-card-section class="">
                   <div class="row q-gutter-md q-ma-md">
                     <q-input class="col-12" type="textarea" v-model="getEditedItem.proof" label="Обоснования"></q-input>
-                    <q-input v-if="userUtils.isCurrentUserChairman()" class="col-12" type="number" v-model="getEditedItem.score"
-                             label="Баллы"></q-input>
+                    <q-input min="0" step="0.5" v-if="userUtils.isCurrentUserChairman()" class="col-12" type="number" v-model="getEditedItem.score"
+                             label="Баллы" :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(1,1.5)]"></q-input>
                   </div>
                 </q-card-section>
 
@@ -49,6 +50,7 @@
           </q-td>
           <q-td key="actions" :props="props" auto-width>
             <q-btn color="blue" label="Редактировать" @click="showEditDialog(props.row)" size=sm no-caps></q-btn>
+            <q-btn color="red" label="Удалить" @click="deleteItem(props.row)" size=sm no-caps></q-btn>
           </q-td>
         </q-tr>
       </template>

@@ -75,13 +75,373 @@
     >
       <proective-table ref="proective_table"/>
       <q-stepper-navigation>
-        <q-btn @click="onPreFinish" color="primary" label="End"/>
+        <q-btn @click="onPreFinish" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="7"
+      prefix="7"
+      title="Разработка рабочей программы учебной дисциплины, модуля, междисциплинарного курса"
+      :error="tablesStepperState.working_program.error"
+      :done="tablesStepperState.working_program.done"
+    >
+      <working-program-table ref="working_program_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="8"
+      prefix="8"
+      title="Сохранение учебно-материальной базы, поддержание надлежащих санитарно-гигиенических условий s"
+    >
+      <class-rooms-table ref="programs_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
     <q-step
-      :name="7"
-      prefix="7"
+      :name="9"
+      prefix="9"
+      title="Пополнение учебно-методических и наглядных пособий"
+      :error="tablesStepperState.programs.error"
+      :done="tablesStepperState.programs.done"
+    >
+      <programs-table ref="class_rooms_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="10"
+      prefix="10"
+      title="Работа по развитию материальной базы кабинета (лаборатории), реконструкции кабинета (лаборатории)"
+      :error="tablesStepperState.reconstruction.error"
+      :done="tablesStepperState.reconstruction.done"
+    >
+      <reconstruction-table ref="reconstruction_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="11"
+      prefix="11"
+      title="Работа по созданию и совершенствованию учебно-методического комплекса по преподаваемым дисциплинам"
+      :error="tablesStepperState.complex.error"
+      :done="tablesStepperState.complex.done"
+    >
+      <complex-table ref="complex_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="12"
+      prefix="12"
+      title="Разработка методических пособий, адресованных обучающимся"
+      :error="tablesStepperState.teachingaids.error"
+      :done="tablesStepperState.teachingaids.done"
+    >
+      <teachingaids-table ref="teachingaids_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="13"
+      prefix="13"
+      title="Создание методических работ по методике обучения, воспитания"
+      :error="tablesStepperState.education.error"
+      :done="tablesStepperState.education.done"
+    >
+      <education-table ref="education_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="14"
+      prefix="14"
+      title=" Работа по созданию и внедрению СДО"
+      :error="tablesStepperState.sdo.error"
+      :done="tablesStepperState.sdo.done"
+    >
+      <s-d-o-table ref="sdo_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="15"
+      prefix="15"
+      title="Наличие плана, концепции воспитательной работы"
+      :error="tablesStepperState.plan.error"
+      :done="tablesStepperState.plan.done"
+    >
+      <plan-table ref="plan_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="16"
+      prefix="16"
+      title="Наличие предметного кружка, эффективность его работы"
+      :error="tablesStepperState.circle.error"
+      :done="tablesStepperState.circle.done"
+    >
+      <circle-table ref="circle_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="17"
+      prefix="17"
+      title="Использование возможностей культурных, научных, производственных и др. учреждений района, города и т.д. в организации внеурочной работы"
+      :error="tablesStepperState.institutions.error"
+      :done="tablesStepperState.institutions.done"
+    >
+      <institutions-table ref="institutions_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="18"
+      prefix="18"
+      title="Проведение мероприятий (отделение, колледж)"
+      :error="tablesStepperState.events.error"
+      :done="tablesStepperState.events.done"
+    >
+      <events-table ref="events_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="19"
+      prefix="19"
+      title="Наличие плана воспитательной работы с группой"
+      :error="tablesStepperState.plan_group.error"
+      :done="tablesStepperState.plan_group.done"
+    >
+      <plan-group-table ref="plan_group_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="20"
+      prefix="20"
+      title="Проведение тематических классных часов"
+      :error="tablesStepperState.coolhours.error"
+      :done="tablesStepperState.coolhours.done"
+    >
+      <coolhours-table ref="coolhours_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="21"
+      prefix="21"
+      title="Организация и проведение мероприятий (отделение, колледж)"
+      :error="tablesStepperState.activity.error"
+      :done="tablesStepperState.activity.done"
+    >
+      <activity-table ref="activity_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="22"
+      prefix="22"
+      title="Сопровождение обучающихся с ОВЗ"
+      :error="tablesStepperState.obz.error"
+      :done="tablesStepperState.obz.done"
+    >
+      <o-b-z-table ref="obz_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="23"
+      prefix="23"
+      title="Непрерывность повышения квалификацииs"
+      :error="tablesStepperState.selfeducation.error"
+      :done="tablesStepperState.selfeducation.done"
+    >
+      <selfeducation-table ref="selfeducation_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="24"
+      prefix="24"
+      title="Прохождение курсов повышения квалификации, стажировки"
+      :error="tablesStepperState.qualification.error"
+      :done="tablesStepperState.qualification.done"
+    >
+      <qualification-table ref="qualification_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="25"
+      prefix="25"
+      title="Участие в работе конференций, семинаров, заседаний городского МО (посещение), обучение на краткосрочных курсах"
+      :error="tablesStepperState.seminars.error"
+      :done="tablesStepperState.seminars.done"
+    >
+      <seminars-table ref="seminars_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="26"
+      prefix="26"
+      title="Работа  над методической темой, проведение открытых уроков, внеурочных мероприятий, тематические выступления на заседаниях цикловых комиссий, педсоветах"
+      :error="tablesStepperState.participation.error"
+      :done="tablesStepperState.participation.done"
+    >
+      <participation-table ref="participation_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="27"
+      prefix="27"
+      title="Участие преподавателя в профессиональных конкурсах, конференциях, проектах"
+    >
+      <contest-table ref="contest_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="28"
+      prefix="28"
+      title="Использование современных образовательных технологий в учебной деятельности и воспитательной работе"
+      :error="tablesStepperState.technologies.error"
+      :done="tablesStepperState.technologies.done"
+    >
+      <technologies-table ref="technologies_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="29"
+      prefix="29"
+      title="Обобщение и распространение опыта"
+      :error="tablesStepperState.experience.error"
+      :done="tablesStepperState.experience.done"
+    >
+      <experience-table ref="experience_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="30"
+      prefix="30"
+      title="Взаимодействие с представителями социума"
+      :error="tablesStepperState.interaction.error"
+      :done="tablesStepperState.interaction.done"
+    >
+      <interaction-table ref="interaction_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="31"
+      prefix="31"
+      title="Исполнительская дисциплина"
+      :error="tablesStepperState.subject.error"
+      :done="tablesStepperState.subject.done"
+    >
+      <subject-table ref="subject_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="32"
+      prefix="32"
+      title="Руководство региональным МО"
+      :error="tablesStepperState.manual.error"
+      :done="tablesStepperState.manual.done"
+    >
+      <manual-table ref="manual_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="33"
+      prefix="33"
       title="Сводка"
     >
       <report-summary/>
@@ -103,6 +463,32 @@
   import ProgressTable from 'components/report/create_report/report_tables/1/ProgressTable.vue';
   import CreationTable from 'components/report/create_report/report_tables/2/CreationTable.vue';
   import ProectiveTable from 'components/report/create_report/report_tables/2/ProectiveTable.vue';
+  import EducationTable from 'components/report/create_report/report_tables/3/EducationTable.vue';
+  import ProgramsTable from 'components/report/create_report/report_tables/3/ProgramsTable.vue';
+  import ClassRoomsTable from 'components/report/create_report/report_tables/3/ClassRoomsTable.vue';
+  import ComplexTable from 'components/report/create_report/report_tables/3/ComplexTable.vue';
+  import ReconstructionTable from 'components/report/create_report/report_tables/3/ReconstructionTable.vue';
+  import SDOTable from 'components/report/create_report/report_tables/3/SDOTable.vue';
+  import TechnologiesTable from 'components/report/create_report/report_tables/7/TechnologiesTable.vue';
+  import TeachingaidsTable from 'components/report/create_report/report_tables/3/TeachingaidsTable.vue';
+  import WorkingProgramTable from 'components/report/create_report/report_tables/3/WorkingProgramTable.vue';
+  import CircleTable from 'components/report/create_report/report_tables/4/CircleTable.vue';
+  import EventsTable from 'components/report/create_report/report_tables/4/EventsTable.vue';
+  import InstitutionsTable from 'components/report/create_report/report_tables/4/InstitutionsTable.vue';
+  import PlanTable from 'components/report/create_report/report_tables/4/PlanTable.vue';
+  import ActivityTable from 'components/report/create_report/report_tables/5/ActivityTable.vue';
+  import CoolhoursTable from 'components/report/create_report/report_tables/5/CoolhoursTable.vue';
+  import OBZTable from 'components/report/create_report/report_tables/5/OBZTable.vue';
+  import PlanGroupTable from 'components/report/create_report/report_tables/5/PlanGroupTable.vue';
+  import ContestTable from 'components/report/create_report/report_tables/6/ContestTable.vue';
+  import ParticipationTable from 'components/report/create_report/report_tables/6/ParticipationTable.vue';
+  import QualificationTable from 'components/report/create_report/report_tables/6/QualificationTable.vue';
+  import SelfeducationTable from 'components/report/create_report/report_tables/6/SelfeducationTable.vue';
+  import SeminarsTable from 'components/report/create_report/report_tables/6/SeminarsTable.vue';
+  import ExperienceTable from 'components/report/create_report/report_tables/8/ExperienceTable.vue';
+  import InteractionTable from 'components/report/create_report/report_tables/9/InteractionTable.vue';
+  import SubjectTable from 'components/report/create_report/report_tables/10/SubjectTable.vue';
+  import ManualTable from 'components/report/create_report/report_tables/11/ManualTable.vue';
   import ReportSummary from 'components/report/create_report/report_tables/meta/ReportSummary.vue';
   import { useStore } from 'src/store';
   import { QStepper } from 'quasar';
@@ -111,7 +497,26 @@
 
   export default defineComponent({
     name: 'ReportStepper',
-    components: { MetaTitle,CommentTable, ProgressExamTable, ProgressTable, CreationTable, ProectiveTable,ReportSummary },
+    components: { MetaTitle,CommentTable, ProgressExamTable, ProgressTable, CreationTable, ProectiveTable, ReportSummary , ManualTable ,ClassRoomsTable,EducationTable,ReconstructionTable,SDOTable,ProgramsTable,ComplexTable,
+      SubjectTable,
+      InteractionTable,
+      ExperienceTable,
+      SeminarsTable,
+      SelfeducationTable,
+      QualificationTable,
+      ParticipationTable,
+      ContestTable,
+      PlanGroupTable,
+      OBZTable,
+      CoolhoursTable,
+      ActivityTable,
+      PlanTable,
+      InstitutionsTable,
+      EventsTable,
+      CircleTable,
+      WorkingProgramTable,
+      TeachingaidsTable,
+      TechnologiesTable },
     setup() {
       const store = useStore();
       const step = ref(1);
