@@ -11,7 +11,7 @@ declare module '@vue/runtime-core' {
 }
 
 export const resource: AxiosInstance = axios.create({
-  baseURL:'/proxy/api/v1'
+  baseURL:'/proxy/api/v1',
 });
 
 resource.interceptors.response.use(

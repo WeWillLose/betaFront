@@ -14,6 +14,7 @@ export interface UserUtilsInterface {
   capitalizeUserFio(user : IUser):IUser
   isCurrentUserAdmin(): boolean
   isCurrentUserChairman(): boolean
+  JwtHeaderForCurrentUser():Record<string, string>
 }
 export class UserUtils implements UserUtilsInterface {
   capitalizeUserFio(user : IUser):IUser{
@@ -72,7 +73,7 @@ export class UserUtils implements UserUtilsInterface {
   }
 
   isLoggedIn(user: IUser | null | undefined): boolean {
-    return !!user;
+    return !!user && !!user.token;
 
   }
   public getFio(user: IUser | null):string {
@@ -103,6 +104,10 @@ export class UserUtils implements UserUtilsInterface {
       .map(key => ({
         name: String(key).replace(separatorRegex, ' '),
       }));
+  }
+
+  JwtHeaderForCurrentUser(): Record<string, string> {
+    return {'authorization':`Bearer ${store.state.user?.user?.token || ''}`};
   }
 }
 const userUtils  = new UserUtils();

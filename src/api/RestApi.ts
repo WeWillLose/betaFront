@@ -3,6 +3,7 @@ import { ErrorImpl } from 'src/model/error/Error';
 import { IUser, IUserLogin, User } from 'src/model/user/User';
 import { Report } from 'src/model/report/Report';
 import { EReportStatus } from 'src/model/report/ReportStatus';
+import userUtils from 'src/utils/user/user';
 
 export interface ServerResponse<T> {
   status: number
@@ -47,6 +48,7 @@ export interface IRestApi {
   updateReport(id: number, report: Report): Promise<ServerResponse<Report>>
 
   updateReportStatus(id: number, status: EReportStatus): Promise<ServerResponse<Report>>
+  deleteReport(id: number): Promise<ServerResponse<void>>
 }
 
 export class RestApi implements IRestApi {
@@ -58,54 +60,54 @@ export class RestApi implements IRestApi {
   }
 
   async login(userLogin: IUserLogin): Promise<ServerResponse<User>> {
-    return this._resource.post('/auth/authenticate/', userLogin);
+    return this._resource.post('/auth/authenticate/', userLogin,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   };
 
   async registrationUser(user: User): Promise<ServerResponse<User>> {
-    return this._resource.post('/auth/registration', user);
+    return this._resource.post('/auth/registration', user,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   };
 
   async getCurrentUser(): Promise<ServerResponse<User>> {
-    return this._resource.get('/auth/authenticate');
+    return this._resource.get('/auth/authenticate',{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   };
 
   async saveReport(report: Report): Promise<ServerResponse<Report>> {
-    return this._resource.post('/report', report);
+    return this._resource.post('/report', report,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   };
 
   async getReportsCurrentUser(): Promise<ServerResponse<Report[]>> {
-    return this._resource.get('/report/author/current');
+    return this._resource.get('/report/author/current',{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async downloadReport(id: number): Promise<ServerResponse<ArrayBuffer>> {
-    return this._resource.get(`/report/docx/${id}`, { responseType: 'arraybuffer' });
+    return this._resource.get(`/report/docx/${id}`,{headers:{...userUtils.JwtHeaderForCurrentUser()},responseType:'arraybuffer'});
   }
 
   async downloadScoreList(id: number): Promise<ServerResponse<ArrayBuffer>> {
-    return this._resource.get(`/scoreList/docx/${id}`, { responseType: 'arraybuffer' });
+    return this._resource.get(`/scoreList/docx/${id}`, {headers:{...userUtils.JwtHeaderForCurrentUser()},responseType: 'arraybuffer'});
   }
 
   async setChairman(followerId: number,chairmanId: number): Promise<ServerResponse<IUser>> {
-    return this._resource.put(`/user/chairman/${chairmanId},${followerId}`);
+    return this._resource.put(`/user/chairman/${chairmanId},${followerId}`,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async getUsers(): Promise<ServerResponse<IUser[]>> {
-    return this._resource.get('/user/info/public/all');
+    return this._resource.get('/user/info/public/all',{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async deleteUser(id: number): Promise<ServerResponse<unknown>> {
-    return this._resource.delete(`/user/${id}`);
+    return this._resource.delete(`/user/${id}`,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async editUser(user: IUser): Promise<ServerResponse<IUser>> {
     if (!user || !user.id) throw new ErrorImpl('IN editUser user | user.id is null', user);
-    return this._resource.put(`/user/info/${user.id}`, user);
+    return this._resource.put(`/user/info/${user.id}`, user,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async resetPassword(user: IUser): Promise<ServerResponse<IUser>> {
     if (!user || !user.id) throw new ErrorImpl('IN resetPassword user | user.id is null', user);
     if (!user.password) throw new ErrorImpl('IN resetPassword password is null', user);
-    return this._resource.put(`/user/password/${user.id}`, { password: user.password });
+    return this._resource.put(`/user/password/${user.id}`, { password: user.password },{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async setRoles(user: IUser): Promise<ServerResponse<IUser>> {
@@ -113,26 +115,30 @@ export class RestApi implements IRestApi {
     if (!user.roles) user.roles = [];
     return this._resource.put(`/user/roles/${user.id}`, user.roles.map(role => {
       return { 'name': role.name };
-    }));
+    },{headers:{...userUtils.JwtHeaderForCurrentUser()}}));
   }
 
   async getChairmans(): Promise<ServerResponse<IUser[]>> {
-    return this._resource.get('/user/chairman/all');
+    return this._resource.get('/user/chairman/all',{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async getFollowerReports(): Promise<ServerResponse<Report[]>> {
-    return this._resource.get('report/followers/current');
+    return this._resource.get('report/followers/current',{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async getReport(id: number): Promise<ServerResponse<Report>> {
-    return this._resource.get(`report/${id}`);
+    return this._resource.get(`report/${id}`,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async updateReport(id: number, report: Report): Promise<ServerResponse<Report>> {
-    return this._resource.put(`report/${id}`, report);
+    return this._resource.put(`report/${id}`, report,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async updateReportStatus(id: number, status: EReportStatus): Promise<ServerResponse<Report>> {
-    return this._resource.put(`report/status/${id}`, { 'status': status });
+    return this._resource.put(`report/status/${id}`, { 'status': status },{headers:{...userUtils.JwtHeaderForCurrentUser()}});
+  }
+
+  deleteReport(id: number): Promise<ServerResponse<void>> {
+    return this._resource.delete(`/report/${id}`,{headers:{...userUtils.JwtHeaderForCurrentUser()}})
   }
 }

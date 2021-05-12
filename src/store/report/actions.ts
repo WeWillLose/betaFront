@@ -87,6 +87,20 @@ const actions: ActionTree<ReportStateInterface, StateInterface> = {
       return false;
     }
   },
+  async deleteReportById(context,id:number) {
+    try {
+      if(id == null) {
+        throw new ErrorImpl('IN deleteReportById report  is null',id)
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const res = await restApi.deleteReport(id)
+      context.commit('deleteFollowerReportsById',id)
+      return true;
+    } catch (e) {
+      console.log(e)
+      return false;
+    }
+  },
 };
 
 export default actions;

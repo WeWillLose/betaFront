@@ -9,7 +9,10 @@ export default {
         filename = matches[1].replace(/['"]/g, '');
       }
     }
-    console.log(filename)
+    if(filename.startsWith('UTF-8')) {
+      filename = filename.substring(5)
+      filename = decodeURIComponent(filename)
+    }
     return filename;
   }
 }

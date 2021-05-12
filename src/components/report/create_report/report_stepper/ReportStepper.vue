@@ -75,7 +75,7 @@
     >
       <proective-table ref="proective_table"/>
       <q-stepper-navigation>
-        <q-btn @click="onPreFinish" color="primary" label="Продолжить"/>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
@@ -84,8 +84,6 @@
       :name="7"
       prefix="7"
       title="Разработка рабочей программы учебной дисциплины, модуля, междисциплинарного курса"
-      :error="tablesStepperState.working_program.error"
-      :done="tablesStepperState.working_program.done"
     >
       <working-program-table ref="working_program_table"/>
       <q-stepper-navigation>
@@ -109,8 +107,7 @@
       :name="9"
       prefix="9"
       title="Пополнение учебно-методических и наглядных пособий"
-      :error="tablesStepperState.programs.error"
-      :done="tablesStepperState.programs.done"
+
     >
       <programs-table ref="class_rooms_table"/>
       <q-stepper-navigation>
@@ -123,8 +120,6 @@
       :name="10"
       prefix="10"
       title="Работа по развитию материальной базы кабинета (лаборатории), реконструкции кабинета (лаборатории)"
-      :error="tablesStepperState.reconstruction.error"
-      :done="tablesStepperState.reconstruction.done"
     >
       <reconstruction-table ref="reconstruction_table"/>
       <q-stepper-navigation>
@@ -137,8 +132,7 @@
       :name="11"
       prefix="11"
       title="Работа по созданию и совершенствованию учебно-методического комплекса по преподаваемым дисциплинам"
-      :error="tablesStepperState.complex.error"
-      :done="tablesStepperState.complex.done"
+
     >
       <complex-table ref="complex_table"/>
       <q-stepper-navigation>
@@ -151,8 +145,6 @@
       :name="12"
       prefix="12"
       title="Разработка методических пособий, адресованных обучающимся"
-      :error="tablesStepperState.teachingaids.error"
-      :done="tablesStepperState.teachingaids.done"
     >
       <teachingaids-table ref="teachingaids_table"/>
       <q-stepper-navigation>
@@ -165,8 +157,6 @@
       :name="13"
       prefix="13"
       title="Создание методических работ по методике обучения, воспитания"
-      :error="tablesStepperState.education.error"
-      :done="tablesStepperState.education.done"
     >
       <education-table ref="education_table"/>
       <q-stepper-navigation>
@@ -179,8 +169,6 @@
       :name="14"
       prefix="14"
       title=" Работа по созданию и внедрению СДО"
-      :error="tablesStepperState.sdo.error"
-      :done="tablesStepperState.sdo.done"
     >
       <s-d-o-table ref="sdo_table"/>
       <q-stepper-navigation>
@@ -193,8 +181,6 @@
       :name="15"
       prefix="15"
       title="Наличие плана, концепции воспитательной работы"
-      :error="tablesStepperState.plan.error"
-      :done="tablesStepperState.plan.done"
     >
       <plan-table ref="plan_table"/>
       <q-stepper-navigation>
@@ -207,8 +193,6 @@
       :name="16"
       prefix="16"
       title="Наличие предметного кружка, эффективность его работы"
-      :error="tablesStepperState.circle.error"
-      :done="tablesStepperState.circle.done"
     >
       <circle-table ref="circle_table"/>
       <q-stepper-navigation>
@@ -221,8 +205,6 @@
       :name="17"
       prefix="17"
       title="Использование возможностей культурных, научных, производственных и др. учреждений района, города и т.д. в организации внеурочной работы"
-      :error="tablesStepperState.institutions.error"
-      :done="tablesStepperState.institutions.done"
     >
       <institutions-table ref="institutions_table"/>
       <q-stepper-navigation>
@@ -235,8 +217,6 @@
       :name="18"
       prefix="18"
       title="Проведение мероприятий (отделение, колледж)"
-      :error="tablesStepperState.events.error"
-      :done="tablesStepperState.events.done"
     >
       <events-table ref="events_table"/>
       <q-stepper-navigation>
@@ -249,8 +229,6 @@
       :name="19"
       prefix="19"
       title="Наличие плана воспитательной работы с группой"
-      :error="tablesStepperState.plan_group.error"
-      :done="tablesStepperState.plan_group.done"
     >
       <plan-group-table ref="plan_group_table"/>
       <q-stepper-navigation>
@@ -263,8 +241,6 @@
       :name="20"
       prefix="20"
       title="Проведение тематических классных часов"
-      :error="tablesStepperState.coolhours.error"
-      :done="tablesStepperState.coolhours.done"
     >
       <coolhours-table ref="coolhours_table"/>
       <q-stepper-navigation>
@@ -277,8 +253,6 @@
       :name="21"
       prefix="21"
       title="Организация и проведение мероприятий (отделение, колледж)"
-      :error="tablesStepperState.activity.error"
-      :done="tablesStepperState.activity.done"
     >
       <activity-table ref="activity_table"/>
       <q-stepper-navigation>
@@ -291,8 +265,6 @@
       :name="22"
       prefix="22"
       title="Сопровождение обучающихся с ОВЗ"
-      :error="tablesStepperState.obz.error"
-      :done="tablesStepperState.obz.done"
     >
       <o-b-z-table ref="obz_table"/>
       <q-stepper-navigation>
@@ -305,8 +277,6 @@
       :name="23"
       prefix="23"
       title="Непрерывность повышения квалификацииs"
-      :error="tablesStepperState.selfeducation.error"
-      :done="tablesStepperState.selfeducation.done"
     >
       <selfeducation-table ref="selfeducation_table"/>
       <q-stepper-navigation>
@@ -319,8 +289,6 @@
       :name="24"
       prefix="24"
       title="Прохождение курсов повышения квалификации, стажировки"
-      :error="tablesStepperState.qualification.error"
-      :done="tablesStepperState.qualification.done"
     >
       <qualification-table ref="qualification_table"/>
       <q-stepper-navigation>
@@ -333,8 +301,6 @@
       :name="25"
       prefix="25"
       title="Участие в работе конференций, семинаров, заседаний городского МО (посещение), обучение на краткосрочных курсах"
-      :error="tablesStepperState.seminars.error"
-      :done="tablesStepperState.seminars.done"
     >
       <seminars-table ref="seminars_table"/>
       <q-stepper-navigation>
@@ -347,8 +313,6 @@
       :name="26"
       prefix="26"
       title="Работа  над методической темой, проведение открытых уроков, внеурочных мероприятий, тематические выступления на заседаниях цикловых комиссий, педсоветах"
-      :error="tablesStepperState.participation.error"
-      :done="tablesStepperState.participation.done"
     >
       <participation-table ref="participation_table"/>
       <q-stepper-navigation>
@@ -373,8 +337,6 @@
       :name="28"
       prefix="28"
       title="Использование современных образовательных технологий в учебной деятельности и воспитательной работе"
-      :error="tablesStepperState.technologies.error"
-      :done="tablesStepperState.technologies.done"
     >
       <technologies-table ref="technologies_table"/>
       <q-stepper-navigation>
@@ -387,8 +349,6 @@
       :name="29"
       prefix="29"
       title="Обобщение и распространение опыта"
-      :error="tablesStepperState.experience.error"
-      :done="tablesStepperState.experience.done"
     >
       <experience-table ref="experience_table"/>
       <q-stepper-navigation>
@@ -401,8 +361,6 @@
       :name="30"
       prefix="30"
       title="Взаимодействие с представителями социума"
-      :error="tablesStepperState.interaction.error"
-      :done="tablesStepperState.interaction.done"
     >
       <interaction-table ref="interaction_table"/>
       <q-stepper-navigation>
@@ -415,8 +373,6 @@
       :name="31"
       prefix="31"
       title="Исполнительская дисциплина"
-      :error="tablesStepperState.subject.error"
-      :done="tablesStepperState.subject.done"
     >
       <subject-table ref="subject_table"/>
       <q-stepper-navigation>
@@ -429,12 +385,10 @@
       :name="32"
       prefix="32"
       title="Руководство региональным МО"
-      :error="tablesStepperState.manual.error"
-      :done="tablesStepperState.manual.done"
     >
       <manual-table ref="manual_table"/>
       <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn @click="onPreFinish" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
@@ -446,7 +400,7 @@
     >
       <report-summary/>
       <q-stepper-navigation>
-        <q-btn @click="onFinish" color="primary" label="End"/>
+        <q-btn @click="onFinish" color="primary" label="Закончить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
@@ -491,6 +445,7 @@
   import ManualTable from 'components/report/create_report/report_tables/11/ManualTable.vue';
   import ReportSummary from 'components/report/create_report/report_tables/meta/ReportSummary.vue';
   import { useStore } from 'src/store';
+  import { useRouter } from 'vue-router'
   import { QStepper } from 'quasar';
   import reportUtils from 'src/utils/report/ReportUtils';
   import { IReport } from 'src/model/report/Report';
@@ -522,6 +477,7 @@
       const step = ref(1);
       const stepper = ref(null) as Ref<QStepper | null>
       const meta_title =ref({hasError:Function})
+      const router = useRouter()
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       // const reportData = computed(()=>store.getters['report/getData'] as Record<string, unknown>)
       // // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -561,7 +517,10 @@
         }else{
           res = await store.dispatch('report/saveReport',getReport.value) as boolean
         }
-        if(res) reportUtils.setDefaultReportTablesData()
+        if(res) {
+          reportUtils.setDefaultReportTablesData()
+          await router.push('myReports')
+        }
       }
 
       return { meta_title,step, stepper, tablesStepperState, onBack, onNext, onPreFinish, onFinish };

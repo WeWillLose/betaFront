@@ -1,6 +1,7 @@
 import { IRole } from 'src/model/role/Role';
 
 export interface IUser {
+  token?: string | null;
   id?: number | null,
   username?: string | null,
   firstName?: string | null,
@@ -27,16 +28,17 @@ export class UserLogin implements IUserLogin {
 }
 
 export class User implements IUser {
-   chairman?: IUser | undefined | null;
-   firstName?: string | undefined | null;
-   id?: number | undefined | null;
-   lastName?: string | undefined | null;
-   middleName?: string | undefined | null;
-   password?: string | undefined | null;
-   roles?: IRole[] | undefined | null;
-   username?: string | undefined | null;
+  token?: string | null;
+  chairman?: IUser | undefined | null;
+  firstName?: string | undefined | null;
+  id?: number | undefined | null;
+  lastName?: string | undefined | null;
+  middleName?: string | undefined | null;
+  password?: string | undefined | null;
+  roles?: IRole[] | undefined | null;
+  username?: string | undefined | null;
 
-  constructor(chairman?: IUser, firstName?: string, id?: number, lastName?: string,
+  constructor(token?: string | null, chairman?: IUser, firstName?: string, id?: number, lastName?: string,
               middleName?: string, password?: string, roles?: IRole[], username?: string) {
     this.chairman = chairman || {};
     this.firstName = firstName;
@@ -46,6 +48,7 @@ export class User implements IUser {
     this.password = password;
     this.roles = roles || [];
     this.username = username;
+    this.token = token;
   }
 }
 

@@ -20,6 +20,11 @@ const mutation: MutationTree<ReportStateInterface> = {
     const ind = state.followerReports.findIndex(item => item.id == report.id)
     ind!=-1 && state.followerReports.splice(ind, 1, cloneDeep(report))
   },
+  deleteFollowerReportsById(state: ReportStateInterface, id: number){
+    const ind = state.followerReports.findIndex(item => item.id == id)
+    ind!=-1 && state.followerReports.splice(ind, 1)
+  },
+
 
 };
 export default mutation;

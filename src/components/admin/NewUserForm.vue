@@ -30,7 +30,7 @@
     setup() {
       const loading = ref(false)
       const store = useStore()
-      const user = reactive(new User('',''))
+      const user = reactive(new User())
 
       function onSubmit() {
         loading.value = true;

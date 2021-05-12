@@ -54,22 +54,22 @@ export class RuleApi implements RuleApiInterface {
   };
 
   lengthLess(len: number): (val: string) => (boolean | string) {
-    if (!len) {
-      console.warn(`len in lengthLess is ${len}`);
+    if (len == null) {
+      console.warn('len in lengthLess is null');
     }
     return (val: string) => val.length < len || `Поле должно быть меньше ${len} символов`;
   };
 
   lengthGreater(len: number): (val: string) => (boolean | string) {
-    if (!len) {
-      console.warn(`len in lengthGreater is ${len}`);
+    if (len == null) {
+      console.warn('len in lengthGreater is null');
     }
     return (val: string) => val.length > len || `Поле должно быть больше ${len} символов`;
   };
 
   lengthEquals(len: number): (val: string) => (boolean | string) {
-    if (!len) {
-      console.warn(`len in lengthEquals is ${len}`);
+    if (len == null) {
+      console.warn('len in lengthEquals is null');
     }
     return (val: string) => val.length === len || `Поле должно состоять из ${len} символов`;
   };
@@ -83,18 +83,18 @@ export class RuleApi implements RuleApiInterface {
   };
 
   numberLess(max: number): (val: number) => (boolean | string) {
-    if (!max) {
-      console.warn(`max in numberLess is ${max}`);
+    if (max == null) {
+      console.warn('max in numberLess is null');
     }
     return (val: number) => val < max || `Поле должно быть меньше чем ${max}`;
   };
 
   numberBetweenNotStrictScore(min: number, max: number): (val: number) => (boolean | string) {
-    if (!min) {
-      console.warn(`min in numberBetweenNotStrict is ${min}`);
+    if (min == null) {
+      console.warn('min in numberBetweenNotStrict is null}');
     }
-    if (!max) {
-      console.warn(`max in numberBetweenNotStrict is ${max}`);
+    if (max  == null) {
+      console.warn('max in numberBetweenNotStrict is null');
     }
     return (val: number) => (val >= min && val <= max || val == 0) || `Min ${min}, Max ${max}`;
   };

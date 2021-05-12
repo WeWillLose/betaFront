@@ -13,6 +13,10 @@ const mutation: MutationTree<UserStateInterface> = {
   addUsersUser(state: UserStateInterface,users:IUser){
     state.users.push(cloneDeep(users));
   },
+  deleteUsersUserById(state: UserStateInterface,id:number){
+    const ind = state.users.findIndex(item => item.id == id)
+    ind!=-1 && state.users.splice(ind, 1)
+  },
   updateUsersUser(state: UserStateInterface, user:IUser){
     const ind = state.users.findIndex(item => item.id == user.id)
     ind!=-1 && state.users.splice(ind, 1, cloneDeep(user))

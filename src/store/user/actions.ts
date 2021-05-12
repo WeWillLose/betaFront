@@ -7,7 +7,6 @@ import { ErrorImpl } from 'src/model/error/Error';
 import userUtils from 'src/utils/user/user';
 
 
-
 const actions: ActionTree<UserStateInterface, StateInterface> = {
   async createUser(context,user:IUser){
     try{
@@ -22,6 +21,7 @@ const actions: ActionTree<UserStateInterface, StateInterface> = {
   async login(context,user:IUserLogin){
     try{
       const res = await restApi.login(user);
+      res.data.token = res.headers['authorization']
       context.commit('setUser',res.data);
       return true;
     }catch (e) {
@@ -43,6 +43,16 @@ const actions: ActionTree<UserStateInterface, StateInterface> = {
     try{
       const res = await restApi.getUsers()
       context.commit('setUsers',res.data);
+      return true;
+    }catch (e) {
+      console.error(e)
+      return false;
+    }
+  },
+  async deleteUser(context,id:number){
+    try{
+      await restApi.deleteUser(id)
+      context.commit('deleteUsersUserById',id);
       return true;
     }catch (e) {
       console.error(e)

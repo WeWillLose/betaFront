@@ -7,7 +7,6 @@
 <script lang="ts">
   import ReportStepper from 'src/components/report/create_report/report_stepper/ReportStepper.vue';
   import { useQuasar } from 'quasar'
-  import { useStore } from 'src/store'
   import reportUtils from 'src/utils/report/ReportUtils';
   import {defineComponent} from 'vue'
   export default defineComponent({

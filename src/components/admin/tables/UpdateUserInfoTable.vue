@@ -35,6 +35,8 @@
         </q-td>
         <q-td key="actions" :props="props" auto-width>
           <q-btn color="blue" label="Изменить Данные" @click="showEditUserDialog(props.row)" size=sm no-caps></q-btn>
+          <q-btn color="red" label="Удалить" @click="deleteUserHandler(props.row.id)" size=sm no-caps></q-btn>
+
         </q-td>
       </q-tr>
     </template>
@@ -115,7 +117,14 @@
           }}
         )
       }
-      return { rows,columns,user_dialog,edited_user,showEditUserDialog,updateUserInfo,ruleApi, filter};
+      function deleteUserHandler(id:number):void {
+        confirm('Вы подтверждаете удаление?') && void store.dispatch('user/deleteUser',id).then(success=> {
+          if(success) {
+            notifyApi.showPositive('Данные успешно измененны')
+          }}
+        )
+      }
+      return { rows,columns,user_dialog,edited_user,deleteUserHandler,showEditUserDialog,updateUserInfo,ruleApi, filter};
     },
   });
 </script>

@@ -39,6 +39,9 @@
                   <q-btn color="grey-7" round flat icon="more_vert">
                     <q-menu cover auto-close>
                       <q-list>
+                        <q-item clickable @click="deleteReportHandler(props.row.id)">
+                          <q-item-section>Удалить</q-item-section>
+                        </q-item>
                         <q-item clickable @click="toggleEditStatusDialog(props.row)">
                           <q-item-section>Изменить статус</q-item-section>
                         </q-item>
@@ -108,6 +111,7 @@
   import {useStore} from 'src/store'
   import notifyApi from 'src/api/NotifyApi';
   import { useRouter } from 'vue-router';
+  import { restApi } from 'boot/axios';
 
   export default defineComponent({
     name: 'FollowerReportTableGrid',
@@ -155,12 +159,15 @@
 
       function editReport(id: number): void {
         {
-          console.log(id)
           void store.dispatch('report/fetchReportByIdAndSetTablesData',id).then((success:boolean) => {if(success) void router.push('createReport')})
         }
       }
+      function deleteReportHandler(id: number): void{
+        confirm('Вы подтверждаете удаление?') && void store.dispatch('report/deleteReportById',id).then((success:boolean) => {if(success) notifyApi.showPositive('Успешно удалено')})
+      }
 
       return {
+        deleteReportHandler,
         filter,
         reports,
         columns,
