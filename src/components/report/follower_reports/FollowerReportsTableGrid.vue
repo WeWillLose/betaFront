@@ -111,7 +111,6 @@
   import {useStore} from 'src/store'
   import notifyApi from 'src/api/NotifyApi';
   import { useRouter } from 'vue-router';
-  import { restApi } from 'boot/axios';
 
   export default defineComponent({
     name: 'FollowerReportTableGrid',

@@ -30,16 +30,16 @@
     setup() {
       const loading = ref(false)
       const store = useStore()
-      const user = reactive(new User())
+      const user = ref(new User())
 
       function onSubmit() {
         loading.value = true;
         setTimeout(() => {
           // eslint-disable-next-line @typescript-eslint/no-floating-promises
-          store.dispatch('user/createUser', user).then(isSuccess => {
+          store.dispatch('user/createUser', user.value).then(isSuccess => {
             if (isSuccess) {
               notifyApi.showPositive('Пользователь успешно создан')
-              // eslint-disable-next-line @typescript-eslint/no-floating-promises
+              user.value = new User()
             }
           }).finally(()=> loading.value = false)
         }, 300)

@@ -21,7 +21,6 @@ const actions: ActionTree<UserStateInterface, StateInterface> = {
   async login(context,user:IUserLogin){
     try{
       const res = await restApi.login(user);
-      res.data.token = res.headers['authorization']
       context.commit('setUser',res.data);
       return true;
     }catch (e) {

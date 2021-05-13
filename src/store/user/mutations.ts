@@ -5,6 +5,7 @@ import {cloneDeep} from 'lodash'
 
 const mutation: MutationTree<UserStateInterface> = {
   setUser(state: UserStateInterface,user:IUser | null){
+    console.log(user)
     state.user = cloneDeep(user);
   },
   setUsers(state: UserStateInterface,users:IUser[]){
