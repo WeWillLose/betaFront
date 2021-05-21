@@ -28,12 +28,10 @@ const actions: ActionTree<ReportStateInterface, StateInterface> = {
   async fetchReportByIdAndSetTablesData(context,id:number){
     try{
       const res = await restApi.getReport(id)
-      console.log('ok')
       context.commit('setReport',res.data)
       reportUtils.setTablesData(res.data)
       return true;
     }catch (e) {
-      console.log('bad')
       return false;
     }
   },

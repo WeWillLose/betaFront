@@ -88,7 +88,7 @@ export class RestApi implements IRestApi {
   }
 
   async setChairman(followerId: number,chairmanId: number): Promise<ServerResponse<IUser>> {
-    return this._resource.put(`/user/chairman/${chairmanId},${followerId}`,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
+    return this._resource.put(`/user/chairman/${chairmanId},${followerId}`,null,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async getUsers(): Promise<ServerResponse<IUser[]>> {
@@ -113,9 +113,7 @@ export class RestApi implements IRestApi {
   async setRoles(user: IUser): Promise<ServerResponse<IUser>> {
     if (!user || !user.id) throw new ErrorImpl('IN setRoles user | user.id is null', user);
     if (!user.roles) user.roles = [];
-    return this._resource.put(`/user/roles/${user.id}`, user.roles.map(role => {
-      return { 'name': role.name };
-    },{headers:{...userUtils.JwtHeaderForCurrentUser()}}));
+    return this._resource.put(`/user/roles/${user.id}`, user.roles.map(role => {return { 'name': role.name };}),{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
   async getChairmans(): Promise<ServerResponse<IUser[]>> {

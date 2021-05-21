@@ -6,14 +6,12 @@ const mutation: MutationTree<MetaStateInterface> = {
     state = metaState
   },
   setDefaultState(state: MetaStateInterface){
-    console.log(state,defaultMetaState)
     for(const key of Object.keys(defaultMetaState)){
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/ban-ts-comment
       // @ts-ignore
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       state[key]  = cloneDeep(defaultMetaState[key])
     }
-    console.log(state,defaultMetaState)
   },
   setYear1(state: MetaStateInterface,year1: number){
     state.year1 = year1

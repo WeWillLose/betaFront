@@ -109,7 +109,6 @@
       }
       function editReport(id: number): void {
         {
-          console.log(id)
           void store.dispatch('report/fetchReportByIdAndSetTablesData',id).then((success:boolean) => {if(success) void router.push('createReport')})
         }
       }
