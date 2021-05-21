@@ -18,6 +18,12 @@ function state(): ReportTableStateInterface {
         align: 'center',
         field:'name'
       },
+      {
+        name: 'actions',
+        label: 'Действия',
+        field: 'actions',
+        align: 'center',
+      }
     ],
     rows: [
       {
@@ -25,8 +31,11 @@ function state(): ReportTableStateInterface {
       }
     ],
     defaultRows: [
-
-    ]
+      {
+        name: '',
+      }
+    ],
+    maxScore: 0
   }
 }
 

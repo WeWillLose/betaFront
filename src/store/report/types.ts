@@ -8,6 +8,7 @@ export interface ReportTableStateInterface {
   columns:Record<string, unknown>[],
   rows : Record<string, unknown>[],
   defaultRows: Record<string, unknown>[],
+  maxScore: number,
 }
 
 export interface QFiledHasError  extends QInput{

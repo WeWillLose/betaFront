@@ -17,6 +17,12 @@ function state(): ReportTableStateInterface {
         align: 'center',
         field: 'presence'
       },
+      {
+        name: 'actions',
+        label: 'Действия',
+        field: 'actions',
+        align: 'center',
+      }
     ],
     rows: [{
       presence: '',
@@ -26,7 +32,8 @@ function state(): ReportTableStateInterface {
       {
         presence: '',
       }
-    ]
+    ],
+    maxScore: 0
   }
 }
 

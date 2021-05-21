@@ -18,7 +18,7 @@
       function showDialog():void{
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         q.dialog({
-          message:'Хоите сбросить данные',
+          message:'Хотите сбросить данные',
           cancel:true,
           ok:true
         }).onOk(()=>reportUtils.setDefaultReportTablesData())

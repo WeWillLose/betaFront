@@ -16,7 +16,7 @@ function state(): ReportTableStateInterface {
       {
         name: 'quantity',
         label: 'Количество проводимых мероприятий, качество документации, отзывы членов МО.',
-        align: 'left',
+        align: 'center',
         field:'quantity'
       },
       {
@@ -26,6 +26,12 @@ function state(): ReportTableStateInterface {
         field: 'score',
         style: 'width:100px'
       },
+      {
+        name: 'actions',
+        label: 'Действия',
+        field: 'actions',
+        align: 'center',
+      }
     ],
     rows: [
       {
@@ -38,7 +44,8 @@ function state(): ReportTableStateInterface {
         quantity: '',
         score: 0,
       }
-    ]
+    ],
+    maxScore: 20
   }
 }
 

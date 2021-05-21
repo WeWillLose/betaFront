@@ -62,7 +62,7 @@
           <q-img
             src="~assets/notFoundData.gif" style="width: 64px;height: 64px"/>
           <span>
-            <b>Так ужастно что ... {{ message }}</b>
+            <b>Так ужасно что ... {{ message }}</b>
           </span>
         </div>
       </template>

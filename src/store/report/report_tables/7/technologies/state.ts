@@ -18,7 +18,7 @@ function state(): ReportTableStateInterface {
       {
         name: 'name',
         label: 'Название технологии',
-        align: 'left',
+        align: 'center',
         field:'name'
       },
       {
@@ -34,21 +34,16 @@ function state(): ReportTableStateInterface {
         field: 'score',
         style: 'width:100px'
       },
-    ],
-    rows: [
       {
-        name: '',
-        application: '',
-        score: 0,
+        name: 'actions',
+        label: 'Действия',
+        field: 'actions',
+        align: 'center',
       }
     ],
-    defaultRows: [
-      {
-        name: '',
-        application: '',
-        score: 0,
-      }
-    ]
+    rows: [],
+    defaultRows: [],
+    maxScore: 1
   }
 }
 

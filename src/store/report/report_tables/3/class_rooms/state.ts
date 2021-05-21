@@ -39,13 +39,14 @@ function state(): ReportTableStateInterface {
       },
       {
         name: 'actions',
-        label: 'Actions',
+        label: 'Действия',
         field: 'actions',
         align: 'center',
       }
     ],
     rows: [],
-    defaultRows: []
+    defaultRows: [],
+    maxScore: 1
   }
 }
 

@@ -5,9 +5,7 @@
              :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
-        <div>
-          <q-btn dense color="primary" label="Добавить строку" @click="showAddRowDialog" no-caps></q-btn>
-        </div>
+
         <div class="q-pa-sm q-gutter-sm">
           <q-dialog v-model="show_dialog">
 
@@ -50,7 +48,6 @@
           </q-td>
           <q-td key="actions" :props="props" auto-width>
             <q-btn color="blue" label="Редактировать" @click="showEditDialog(props.row)" size=sm no-caps></q-btn>
-            <q-btn color="red" label="Удалить" @click="deleteItem(props.row)" size=sm no-caps></q-btn>
           </q-td>
         </q-tr>
       </template>

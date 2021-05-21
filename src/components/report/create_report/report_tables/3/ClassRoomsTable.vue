@@ -48,7 +48,6 @@
           </q-td>
           <q-td key="score" :props="props">
             {{props.row.score}}
-
           </q-td>
           <q-td key="actions" :props="props" auto-width>
             <q-btn color="blue" label="Редактировать" @click="showEditDialog(props.row)" size=sm no-caps></q-btn>

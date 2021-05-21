@@ -11,7 +11,7 @@ declare module '@vue/runtime-core' {
 }
 
 export const resource: AxiosInstance = axios.create({
-  baseURL:'http://localhost:8085/api/v1',
+  baseURL:'https://backend1234560.herokuapp.com/api/v1',
 });
 
 resource.interceptors.response.use(

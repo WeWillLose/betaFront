@@ -11,6 +11,7 @@
       <router-view/>
     </q-page-container>
   </q-layout>
+
 </template>
 
 <script lang="ts">

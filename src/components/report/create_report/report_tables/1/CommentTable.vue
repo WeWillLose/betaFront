@@ -52,7 +52,6 @@
           </q-td>
           <q-td key="actions" :props="props" auto-width>
             <q-btn color="blue" label="Редактировать" @click="showEditDialog(props.row)" size=sm no-caps></q-btn>
-            <q-btn color="red" label="Удалить" @click="deleteItem(props.row)" size=sm no-caps></q-btn>
           </q-td>
         </q-tr>
       </template>

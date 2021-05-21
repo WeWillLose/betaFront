@@ -20,7 +20,7 @@ function state(): ReportTableStateInterface {
       {
         name: 'name',
         label: 'Название мероприятия, издания',
-        align: 'left',
+        align: 'center',
         field:'name'
       },
       {
@@ -44,16 +44,14 @@ function state(): ReportTableStateInterface {
       },
       {
         name: 'actions',
-        label: 'Actions',
+        label: 'Действия',
         field: 'actions',
         align: 'center',
       },
     ],
-    rows: [
-    ],
-    defaultRows: [
-
-    ],
+    rows: [],
+    defaultRows: [],
+    maxScore: 4
   }
 }
 

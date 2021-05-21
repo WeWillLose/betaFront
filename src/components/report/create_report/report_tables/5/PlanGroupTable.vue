@@ -4,9 +4,6 @@
              :separator="separator" hide-bottom
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
-        <div>
-          <q-btn dense color="primary" label="Добавить строку" @click="showAddRowDialog" no-caps></q-btn>
-        </div>
         <div class="q-pa-sm q-gutter-sm">
           <q-dialog v-model="show_dialog">
             <q-card class="add_row_dialog bg-secondary">
@@ -17,7 +14,7 @@
 
                 <q-card-section>
                   <div class="row q-gutter-md q-ma-md">
-                    <q-input class="col-12" type="textarea" v-model="getEditedItem.presence" label=""></q-input>
+                    <q-input class="col-12" type="text" v-model="getEditedItem.presence" label=""></q-input>
                   </div>
                 </q-card-section>
 
@@ -39,7 +36,6 @@
           </q-td>
           <q-td key="actions" :props="props" auto-width>
             <q-btn color="blue" label="Редактировать" @click="showEditDialog(props.row)" size=sm no-caps></q-btn>
-            <q-btn color="red" label="Удалить" @click="deleteItem(props.row)" size=sm no-caps></q-btn>
           </q-td>
         </q-tr>
       </template>

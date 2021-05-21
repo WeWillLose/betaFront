@@ -18,7 +18,7 @@ function state(): ReportTableStateInterface {
       {
         name: 'type',
         label: 'Вид взаимодействия',
-        align: 'center',
+        align: 'left',
         field:'type'
       },
       {
@@ -34,6 +34,12 @@ function state(): ReportTableStateInterface {
         field: 'score',
         style: 'width:100px'
       },
+      {
+        name: 'actions',
+        label: 'Действия',
+        field: 'actions',
+        align: 'center',
+      }
     ],
     rows: [
       {
@@ -88,7 +94,8 @@ function state(): ReportTableStateInterface {
         perform: '',
         score: 0,
       },
-    ]
+    ],
+    maxScore: 4
   }
 }
 

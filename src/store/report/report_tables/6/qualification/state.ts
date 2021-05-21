@@ -18,7 +18,7 @@ function state(): ReportTableStateInterface {
       {
         name: 'qualification',
         label: 'Прохождение курсов повышения квалификации, стажировки',
-        align: 'center',
+        align: 'left',
         field:'qualification'
       },
       {
@@ -34,6 +34,12 @@ function state(): ReportTableStateInterface {
         field: 'score',
         style: 'width:100px'
       },
+      {
+        name: 'actions',
+        label: 'Действия',
+        field: 'actions',
+        align: 'center',
+      }
     ],
     rows: [
       {
@@ -58,7 +64,8 @@ function state(): ReportTableStateInterface {
         date: '',
         score: 0,
       },
-    ]
+    ],
+    maxScore: 0.5
   }
 }
 

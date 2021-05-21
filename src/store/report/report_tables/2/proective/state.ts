@@ -4,6 +4,7 @@ function state(): ReportTableStateInterface {
   return {
     name: 'proective',
     editedIndex: -1,
+
     editedItem: {
       interesting: '',
       proof: '',
@@ -37,7 +38,7 @@ function state(): ReportTableStateInterface {
       },
       {
         name: 'actions',
-        label: 'Actions',
+        label: 'Действия',
         field: 'actions',
         align: 'center',
       }
@@ -66,7 +67,8 @@ function state(): ReportTableStateInterface {
         proof: '',
         score: 0,
       },
-    ]
+    ],
+    maxScore: 7
   }
 }
 

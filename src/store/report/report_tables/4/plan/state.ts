@@ -21,24 +21,21 @@ function state(): ReportTableStateInterface {
       },
       {
         name: 'score',
-        align: 'right',
+        align: 'center',
         label: 'Баллы',
         field: 'score',
         style: 'width:100px'
       },
-    ],
-    rows: [
       {
-        level: '',
-        score: 0,
+        name: 'actions',
+        label: 'Действия',
+        field: 'actions',
+        align: 'center',
       }
     ],
-    defaultRows: [
-      {
-        level: '',
-        score: 0,
-      }
-    ]
+    rows: [],
+    defaultRows: [],
+    maxScore: 0.5
   }
 }
 

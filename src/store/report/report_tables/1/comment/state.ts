@@ -4,6 +4,7 @@ function state(): ReportTableStateInterface {
   return {
     name:'comment',
     editedIndex: -1,
+
     editedItem: {
       comment: '',
       score: 0,
@@ -29,7 +30,7 @@ function state(): ReportTableStateInterface {
       },
       {
         name: 'actions',
-        label: 'Actions',
+        label: 'Действия',
         field: 'actions',
         align: 'center',
       }
@@ -45,7 +46,8 @@ function state(): ReportTableStateInterface {
         comment: '',
         score: 0,
       }
-    ]
+    ],
+    maxScore: 8
   }
 }
 

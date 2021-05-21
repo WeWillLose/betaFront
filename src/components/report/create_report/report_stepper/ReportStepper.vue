@@ -9,6 +9,7 @@
     vertical
     animated
     header-nav
+
   >
     <q-step
       :name="1"
@@ -276,7 +277,7 @@
     <q-step
       :name="23"
       prefix="23"
-      title="Непрерывность повышения квалификацииs"
+      title="Непрерывность повышения квалификации"
     >
       <selfeducation-table ref="selfeducation_table"/>
       <q-stepper-navigation>
@@ -478,6 +479,7 @@
       const stepper = ref(null) as Ref<QStepper | null>
       const meta_title =ref({hasError:Function})
       const router = useRouter()
+
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       // const reportData = computed(()=>store.getters['report/getData'] as Record<string, unknown>)
       // // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access

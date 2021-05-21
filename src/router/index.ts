@@ -39,7 +39,7 @@ export default route<StateInterface>(function (/* { store, ssrContext } */) {
   });
   Router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
-  const publicPages = ['/login'];
+  const publicPages = ['/Login'];
   const authRequired = !publicPages.includes(to.path);
   let loggedIn = false;
   try{
@@ -50,7 +50,7 @@ export default route<StateInterface>(function (/* { store, ssrContext } */) {
   }
 
   if (authRequired && !loggedIn) {
-    return next('/login');
+    return next('/Login');
   }
   next();
 })

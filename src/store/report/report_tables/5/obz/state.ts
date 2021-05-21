@@ -26,15 +26,16 @@ function state(): ReportTableStateInterface {
         field: 'score',
         style: 'width:100px'
       },
-    ],
-    rows: [
       {
-
+        name: 'actions',
+        label: 'Действия',
+        field: 'actions',
+        align: 'center',
       }
     ],
-    defaultRows: [
-
-    ]
+    rows: [],
+    defaultRows: [],
+    maxScore: 2
   }
 }
 
