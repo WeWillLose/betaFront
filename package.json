@@ -1,8 +1,8 @@
 {
-  "name": "vue3-app",
+  "name": "docx",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Vue3App",
+  "description": "",
+  "productName": "Docx",
   "author": "WeWillLose <artem2001sarg@mail.ru>",
   "private": true,
   "scripts": {

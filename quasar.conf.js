@@ -151,9 +151,9 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: 'Vue3App',
-        short_name: 'Vue3App',
-        description: 'A Quasar Framework app',
+        name: 'Docx',
+        short_name: 'Docx',
+        description: '',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -218,7 +218,7 @@ module.exports = configure(function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'vue3-app'
+        appId: 'docx'
       },
 
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
