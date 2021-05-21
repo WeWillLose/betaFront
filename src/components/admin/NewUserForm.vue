@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import {defineComponent, ref, reactive} from 'vue';
+  import {defineComponent, ref} from 'vue';
   import {useStore} from 'src/store';
   import ruleApi from 'src/api/RuleApi';
   import { User} from 'src/model/user/User';
