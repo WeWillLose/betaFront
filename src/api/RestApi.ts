@@ -1,7 +1,7 @@
 import { AxiosInstance } from 'axios';
 import { ErrorImpl } from 'src/model/error/Error';
 import { IUser, IUserLogin, User } from 'src/model/user/User';
-import { Report } from 'src/model/report/Report';
+import { IReport, Report } from 'src/model/report/Report';
 import { EReportStatus } from 'src/model/report/ReportStatus';
 import userUtils from 'src/utils/user/user';
 
@@ -124,6 +124,9 @@ export class RestApi implements IRestApi {
     return this._resource.get('report/followers/current',{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
 
+  getAllReports(): Promise<ServerResponse<IReport[]>> {
+    return this._resource.get('/report/all',{headers:{...userUtils.JwtHeaderForCurrentUser()}})
+  }
   async getReport(id: number): Promise<ServerResponse<Report>> {
     return this._resource.get(`report/${id}`,{headers:{...userUtils.JwtHeaderForCurrentUser()}});
   }
@@ -139,4 +142,5 @@ export class RestApi implements IRestApi {
   deleteReport(id: number): Promise<ServerResponse<void>> {
     return this._resource.delete(`/report/${id}`,{headers:{...userUtils.JwtHeaderForCurrentUser()}})
   }
+
 }

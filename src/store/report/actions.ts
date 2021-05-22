@@ -44,6 +44,15 @@ const actions: ActionTree<ReportStateInterface, StateInterface> = {
         return false;
     }
   },
+  async fetchAllFollowerReports(context) {
+    try {
+      const res = await restApi.getAllReports()
+      context.commit('setFollowersReport', res.data)
+      return true;
+    } catch (e) {
+      return false;
+    }
+  },
   async editReportStatus(context,report:IReport) {
     try {
       if(!report || !report.id  || !report.status) {
