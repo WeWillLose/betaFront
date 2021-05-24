@@ -14,9 +14,9 @@
 
                 <q-card-section>
                   <div class="row q-gutter-md q-ma-md">
-                    <q-input class="col-12" type="text" v-model="getEditedItem.typework" label="Вид работ"></q-input>
+                    <q-input class="col-12" type="text" v-model="getEditedItem.typework" readonly label="Вид работ"></q-input>
                     <q-input class="col-12" type="text" v-model="getEditedItem.MDK" label="УД, МДК"></q-input>
-                    <q-input class="col-12" type="number" v-model="getEditedItem.materials" label="Количество материалов"></q-input>
+                    <q-input class="col-12" type="textarea" v-model="getEditedItem.materials" label="Количество материалов"></q-input>
                     <q-input min="0" step="0.5" v-if="userUtils.isCurrentUserChairman()" class="col-12" type="number" v-model="getEditedItem.score" label="Баллы"
                              :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(0.5,1)]"></q-input>
                   </div>

@@ -5,11 +5,11 @@ import { IReport, Report } from 'src/model/report/Report';
 import { EReportStatus } from 'src/model/report/ReportStatus';
 import userUtils from 'src/utils/user/user';
 
-export interface ServerResponse<T> {
+export interface ServerResponse<C> {
   status: number
   statusText: string
   headers:Record<string, string>,
-  data: T
+  data: C
 }
 
 export interface IRestApi {

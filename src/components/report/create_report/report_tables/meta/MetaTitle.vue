@@ -25,10 +25,10 @@
                  :rules="[ruleApi.required()]"
                  hint="По какой год" v-model="year2"></q-input>
       </div>
-
+      <h5></h5>
       <div class="row q-gutter-md">
         <q-input class="col-12 col-md" type="text" label="Название отчета" ref="reportNameField"
-                 hint="С какого года" v-model="reportName"></q-input>
+                 hint="" v-model="reportName"></q-input>
       </div>
     </q-form>
   </div>

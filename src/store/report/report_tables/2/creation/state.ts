@@ -25,7 +25,7 @@ function state(): ReportTableStateInterface {
       {
         name: 'proof',
         align: 'center',
-        label: 'Обоснования',
+        label: 'Обоснование (мероприятие, количество обучающихся)',
         field: 'proof',
       },
       {

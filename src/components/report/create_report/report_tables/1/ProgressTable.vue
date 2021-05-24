@@ -19,9 +19,9 @@
 
                 <q-card-section>
                   <div class="row q-gutter-md q-ma-md">
-                    <q-input class="col-12" type="textarea" clearable v-model="getEditedItem.group"
+                    <q-input class="col-12" type="text" clearable v-model="getEditedItem.group"
                              label="Группа"></q-input>
-                    <q-input class="col-12" type="textarea" v-model="getEditedItem.subject"
+                    <q-input class="col-12" type="text" v-model="getEditedItem.subject"
                              label="Дисциплина"></q-input>
                     <q-input class="col-12" type="number" v-model="getEditedItem.amount"
                              label="Колво студентов"></q-input>
@@ -59,34 +59,34 @@
       <template v-slot:body="props">
         <q-tr :props="props">
           <q-td key="group" :props="props">
-            <q-input type="text" v-model="props.row.group"></q-input>
+            {{props.row.group}}
           </q-td>
           <q-td key="subject" :props="props">
-            <q-input type="text" v-model="props.row.subject"></q-input>
+            {{props.row.subject}}
           </q-td>
           <q-td key="amount" :props="props">
-            <q-input type="number" v-model="props.row.amount"></q-input>
+            {{props.row.amount}}
           </q-td>
           <q-td key="mark5" :props="props">
-            <q-input type="number" v-model="props.row.mark5"></q-input>
+            {{props.row.mark5}}
           </q-td>
           <q-td key="mark4" :props="props">
-            <q-input type="number" v-model="props.row.mark4"></q-input>
+            {{props.row.mark4}}
           </q-td>
           <q-td key="mark3" :props="props">
-            <q-input type="number" v-model="props.row.mark3"></q-input>
+            {{props.row.mark3}}
           </q-td>
           <q-td key="mark2" :props="props">
-            <q-input type="number" v-model="props.row.mark2"></q-input>
+            {{props.row.mark2}}
           </q-td>
           <q-td key="progress" :props="props">
-            <q-input type="number" v-model="props.row.progress"></q-input>
+            {{props.row.progress}}
           </q-td>
           <q-td key="quality" :props="props">
-            <q-input type="number" v-model="props.row.quality"></q-input>
+            {{props.row.quality}}
           </q-td>
           <q-td key="unsuccs" :props="props">
-            <q-input type="textarea" v-model="props.row.unsuccs"></q-input>
+            {{props.row.unsuccs}}
           </q-td>
           <q-td key="actions" :props="props" auto-width>
             <q-btn color="blue" label="Редактировать" @click="showEditDialog(props.row)" size=sm no-caps></q-btn>

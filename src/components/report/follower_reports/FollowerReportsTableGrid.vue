@@ -32,7 +32,7 @@
                     <q-badge :color="getColorByStatus(props.row.status)">{{props.row.status}}</q-badge>
                   </div>
                   <div class="text-subtitle2">
-                    дата создания : <b>{{dateUtils.toLocalString(props.row.createdDate)}}</b>
+                    Дата создания : <b>{{dateUtils.toLocalString(props.row.createdDate)}}</b>
                   </div>
                 </div>
                 <div class="col-auto">

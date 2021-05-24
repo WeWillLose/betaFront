@@ -18,9 +18,9 @@
 
                 <q-card-section>
                   <div class="row q-gutter-md q-ma-md">
-                    <q-input class="col-12 " type="textarea" counter maxlength="500" clearable
+                    <q-input class="col-12 " type="text" counter maxlength="500" clearable
                              v-model="getEditedItem.group" label="Группа"></q-input>
-                    <q-input class="col-12 " type="textarea" counter maxlength="500"
+                    <q-input class="col-12 " type="text" counter maxlength="500"
                              v-model="getEditedItem.subject" label="Дисциплина"></q-input>
                     <q-input class="col-12 " type="number" v-model="getEditedItem.amount"
                              label="Колво студентов"></q-input>

@@ -17,7 +17,7 @@
 
                 <q-card-section class="">
                   <div class="row q-gutter-md q-ma-md">
-                    <q-input class="col-12" type="textarea" v-model="getEditedItem.proof" label="Обоснования"></q-input>
+                    <q-input class="col-12" type="textarea" v-model="getEditedItem.proof" label="Обоснование (мероприятие, количество обучающихся)"></q-input>
                     <q-input min="0" step="0.5" v-if="userUtils.isCurrentUserChairman()" class="col-12" type="number" v-model="getEditedItem.score"
                              label="Баллы" :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(1,1.5)]"></q-input>
                   </div>

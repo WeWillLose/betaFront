@@ -25,7 +25,7 @@ function state(): ReportTableStateInterface {
         name: 'name',
         label: 'Название',
         align: 'center',
-        field: 'name'
+        field: 'name',
       },
       {
         name: 'score',

@@ -26,7 +26,7 @@ function state(): ReportTableStateInterface {
       {
         name: 'proof',
         align: 'center',
-        label: 'Обоснования',
+        label: 'Обоснование (мероприятие, количество обучающихся)',
         field: 'proof',
       },
       {
@@ -46,7 +46,7 @@ function state(): ReportTableStateInterface {
     ],
     rows: [
       {
-        interesting: 'Учатсие обучающихся в конференциях',
+        interesting: 'Участие обучающихся в конференциях',
         proof: '',
         score: 0,
       },
@@ -58,7 +58,7 @@ function state(): ReportTableStateInterface {
     ],
     defaultRows: [
       {
-        interesting: 'Учатсие обучающихся в конференциях',
+        interesting: 'Участие обучающихся в конференциях',
         proof: '',
         score: 0,
       },

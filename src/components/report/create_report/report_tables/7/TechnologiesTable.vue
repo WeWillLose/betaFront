@@ -20,7 +20,7 @@
                     <q-input class="col-12" type="text" v-model="getEditedItem.name" label="Название технологии"></q-input>
                     <q-input class="col-12" type="textarea" v-model="getEditedItem.application" label="Практическое применение"></q-input>
                     <q-input min="0" step="0.5" v-if="userUtils.isCurrentUserChairman()" class="col-12" type="number" v-model="getEditedItem.score"
-                             label="Баллы" :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(0,0.5)]"></q-input>
+                             label="Баллы" :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(0,1)]"></q-input>
 
                   </div>
                 </q-card-section>

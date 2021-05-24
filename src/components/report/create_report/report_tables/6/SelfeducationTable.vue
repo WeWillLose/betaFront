@@ -14,7 +14,7 @@
 
                 <q-card-section>
                   <div class="row q-gutter-md q-ma-md">
-                    <q-input class="col-12" type="text" v-model="getEditedItem.selfeducation" label="Самообразование"></q-input>
+                    <q-input class="col-12"  type="text" v-model="getEditedItem.selfeducation" readonly label="Самообразование" ></q-input>
                     <q-input class="col-12" type="text" v-model="getEditedItem.justification" label="Обоснование"></q-input>
                     <q-input min="0" step="0.5" v-if="userUtils.isCurrentUserChairman()" class="col-12" type="number" v-model="getEditedItem.score"
                              label="Баллы" :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(0,0.5)]"></q-input>
