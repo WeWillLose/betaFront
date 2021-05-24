@@ -8,7 +8,6 @@
     active-color="purple"
     vertical
     animated
-    header-nav
 
   >
     <q-step
