@@ -449,6 +449,7 @@
   import { QStepper } from 'quasar';
   import reportUtils from 'src/utils/report/ReportUtils';
   import { IReport } from 'src/model/report/Report';
+  import notifyApi from 'src/api/NotifyApi';
 
   export default defineComponent({
     name: 'ReportStepper',
@@ -520,6 +521,7 @@
         }
         if(res) {
           reportUtils.setDefaultReportTablesData()
+          notifyApi.showPositive('Отчет успешно сохранен')
           await router.push('myReports')
         }
       }
