@@ -4,13 +4,13 @@
       <h5><strong>Иформация об учителе</strong></h5>
       <div class="row q-gutter-md">
         <q-input class="col-12 col-md" label="Фамилия" ref="lastNameField"
-                 :rules="[ruleApi.required()]"
+                hint="Можно оставить пустым"
                  v-model="lastName"></q-input>
         <q-input class="col-12 col-md" label="Имя" ref="firstNameField"
-                 :rules="[ruleApi.required()]"
+                 hint="Можно оставить пустым"
                  v-model="firstName"></q-input>
         <q-input class="col-12 col-md" label="Отчество" ref="middleNameField"
-                 :rules="[ruleApi.required()]"
+                 hint="Можно оставить пустым"
                  v-model="middleName"></q-input>
       </div>
       <h5><strong>Информация об отчете</strong></h5>

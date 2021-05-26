@@ -494,13 +494,13 @@
       }
 
       function onNext(): void {
-        stepper.value?.next();
-      }
-      function onPreFinish(): void {
         if(meta_title.value.hasError()){
           stepper.value?.goTo(1);
           return
         }
+        stepper.value?.next();
+      }
+      function onPreFinish(): void {
         prepareData()
         onNext()
       }

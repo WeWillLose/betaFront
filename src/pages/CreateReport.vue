@@ -8,7 +8,7 @@
   import ReportStepper from 'src/components/report/create_report/report_stepper/ReportStepper.vue';
   import { useQuasar } from 'quasar'
   import reportUtils from 'src/utils/report/ReportUtils';
-  import {defineComponent,onActivated} from 'vue'
+  import {defineComponent} from 'vue'
   import {useStore} from 'src/store'
   import notifyApi from 'src/api/NotifyApi';
 

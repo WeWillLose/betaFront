@@ -15,6 +15,7 @@ const getters: GetterTree<ReportStateInterface, StateInterface> = {
   getEditedFollowerReport:state =>state.editedFollowerReport,
   getDataWithoutComputed: state => {
     const res:IReport = new Report()
+    const user = userUtils.getCurrentUser()
     res['data'] = {}
     res['data']['META'] = {}
     res['data']['tables'] = {}
@@ -25,11 +26,18 @@ const getters: GetterTree<ReportStateInterface, StateInterface> = {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          res['data']['META']['firstName']= state[t]?.firstName as string
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          res['data']['META']['lastName'] = state[t]?.lastName as string
+          res['data']['META']['firstName']= (state[t]?.firstName || user?.firstName) as string
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          res['data']['META']['lastName'] =( state[t]?.lastName || user?.lastName)as string
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          res['data']['META']['middleName'] = (state[t]?.middleName || user?.middleName) as string
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -45,10 +53,6 @@ const getters: GetterTree<ReportStateInterface, StateInterface> = {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          res['data']['META']['middleName'] = state[t]?.middleName as string
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           res.id = state[t]?.id as number
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
@@ -57,12 +61,11 @@ const getters: GetterTree<ReportStateInterface, StateInterface> = {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          res['data']['META']['fio'] = userUtils.getFio({ firstName: state[t]?.firstName as string || '', lastName: state[t]?.lastName as string || '', middleName:state[t]?.middleName as string || '',
-          })
+          res['data']['META']['fio'] = userUtils.getFioOrCurrent({ firstName: (state[t]?.firstName ) as string || '', lastName: ( state[t]?.lastName ) as string || '', middleName:(state[t]?.middleName ) as string || '', })
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          res['data']['META']['fioShort'] = userUtils.getShortFio({ firstName: state[t]?.firstName as string || '', lastName: state[t]?.lastName as string || '', middleName:state[t]?.middleName  as string || '', })
+          res['data']['META']['fioShort'] = userUtils.getShortFioOrCurrent({ firstName: (state[t]?.firstName ) as string || '', lastName: ( state[t]?.lastName ) as string || '', middleName:(state[t]?.middleName )  as string || '', })
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
