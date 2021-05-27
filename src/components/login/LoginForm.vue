@@ -41,7 +41,7 @@
             if (isSuccess) {
               notifyApi.showPositive('Вы успешно залогинились')
               // eslint-disable-next-line @typescript-eslint/no-floating-promises
-              router.push('/')
+              router.push('/myReports')
             }else{
               notifyApi.showNegative('Авторизация провалена')
             }

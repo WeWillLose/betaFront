@@ -26,7 +26,7 @@ function state(): HeaderStateInterface {
     leftDrawerMenuList: <ItemInterface[]>[
       {
         title: 'Администирование',
-        caption: 'Только для админа',
+        caption: 'Только для администратора',
         icon: 'admin_panel_settings',
         link: 'admin',
         iconColor: 'blue',

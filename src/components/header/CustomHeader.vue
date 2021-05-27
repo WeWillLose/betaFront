@@ -95,7 +95,7 @@
         const shortFio =  computed(()=> store.getters['user/getShortFio'] as string);
 
         function toRoot(){
-          void router.push('/')
+          void router.push('/myReports')
         }
         function invertLeftDrawerState(): void {
           leftDrawerOpen.value = !leftDrawerOpen.value;
