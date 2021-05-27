@@ -39,18 +39,20 @@ export default route<StateInterface>(function (/* { store, ssrContext } */) {
   });
   Router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
-  const publicPages = ['/Login'];
-  const authRequired = !publicPages.includes(to.path);
-  let loggedIn = false;
+  const publicPages = ['/Login']
+  const authRequired = !publicPages.includes(to.path)
+  let loggedIn = false
   try{
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     loggedIn = store.getters['user/getIsLoggedIn'] as  boolean
   }catch (e) {
     console.error('In beforeEach', e)
   }
-
   if (authRequired && !loggedIn) {
-    return next('/Login');
+    return next('/Login')
+  }
+  if(to.fullPath === '/'){
+    return next('/myreports')
   }
   next();
 })
