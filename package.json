@@ -6,8 +6,9 @@
   "author": "WeWillLose <artem2001sarg@mail.ru>",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.ts,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "build": "quasar build",
+    "start": "node server.js",
+    "heroku-postbuild": "yarn && yarn build"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
