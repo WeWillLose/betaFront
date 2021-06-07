@@ -10,9 +10,9 @@
     <h5><strong>Ожидаемая надбавка</strong></h5>
     <div class="row q-gutter-md">
       <q-input class="col-12 col-md" label="За 1-2 критерий" ref="procent1Field"
-               v-model="procent1" readonly></q-input>
+               v-model="procent1" readonly suffix="%"></q-input>
       <q-input class="col-12 col-md" label="За 3-10 критерий" ref="procent2Field"
-               v-model="procent2" readonly></q-input>
+               v-model="procent2" readonly suffix="%"></q-input>
     </div>
   </div>
 </template>

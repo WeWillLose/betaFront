@@ -36,9 +36,9 @@
                              label="Кол-во оценок 2"></q-input>
                   </div>
                   <div class="row q-gutter-md  q-ma-md">
-                    <q-input class="col-12 col-md" type="number" v-model="getEditedItem.progress"
+                    <q-input class="col-12 col-md" type="number" step="0.1" min="0" v-model="getEditedItem.progress"
                              label="Успеваемость  (%)"></q-input>
-                    <q-input class="col-12 col-md" type="number" v-model="getEditedItem.quality"
+                    <q-input class="col-12 col-md" type="number" step="0.1" min="0" v-model="getEditedItem.quality"
                              label="Качество зананий (%)"></q-input>
                   </div>
                   <div class="row q-gutter-md  q-ma-md">
