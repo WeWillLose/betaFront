@@ -34,6 +34,10 @@ resource.interceptors.response.use(
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       } else if(error.response.status == 409){
         notifyApi.showNegative('Проверьте данные. На сервере произошел конфликт(Возможно что-то уже есть с такими же данными)')
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      } else if(error.response.status == 400){
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        notifyApi.showNegative(error?.response?.data?.messages[0] || 'Сервер ответил ошибкой')
       }
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       else {
