@@ -4,9 +4,6 @@
              class="bg-transparent no-box-shadow"
     >
       <template v-slot:top-right>
-        <div>
-          <q-btn dense color="primary" label="Добавить строку" @click="showAddRowDialog" no-caps></q-btn>
-        </div>
         <div class="q-pa-sm q-gutter-sm">
           <q-dialog v-model="show_dialog">
             <q-card class="add_row_dialog bg-secondary">
