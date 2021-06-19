@@ -1,7 +1,7 @@
 <template>
   <div class="std_form_container">
     <q-form class="q-gutter-md q-ma-md" @submit="onSubmit">
-      <div><h4><strong>Авторизация</strong></h4></div>
+      <div><h4><strong>Авторизация //Heroku</strong></h4></div>
 
       <q-input type="text" label="Логин" :rules="[ruleApi.required(),ruleApi.username()]" v-model="user.username"/>
 
