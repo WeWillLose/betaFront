@@ -2,6 +2,7 @@ import {capitalize} from 'lodash'
 import { IUser } from 'src/model/user/User'
 import { ERole } from 'src/model/role/Role'
 import store from 'src/store'
+import jwtUtils from 'src/utils/jwt/JwtUtils';
 
 export interface UserUtilsInterface {
   getCurrentUser():IUser | null
@@ -76,8 +77,7 @@ export class UserUtils implements UserUtilsInterface {
   }
 
   isLoggedIn(user: IUser | null | undefined): boolean {
-    return !!user && !!user.token;
-
+    return !!user && !!user.token && !jwtUtils.IsExpired(user.token)
   }
   public getFio(user: IUser | null):string {
     if(!user) return '';

@@ -15,8 +15,8 @@
 </template>
 
 <script lang="ts">
-  import {defineComponent} from 'vue';
-  import CustomHeader from 'components/header/CustomHeader.vue';
+  import {defineComponent} from 'vue'
+  import CustomHeader from 'components/header/CustomHeader.vue'
   export default defineComponent({
 
     name: 'MainLayout',
@@ -24,11 +24,7 @@
     components: {CustomHeader},
     setup() {
       return {
-
       }
     },
-    methods:{
-
-    }
   });
 </script>
