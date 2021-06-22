@@ -2,6 +2,7 @@ import {capitalize} from 'lodash'
 import { IUser } from 'src/model/user/User'
 import { ERole } from 'src/model/role/Role'
 import store from 'src/store'
+import reportUtils from 'src/utils/report/ReportUtils';
 
 export interface UserUtilsInterface {
   getCurrentUser():IUser | null
@@ -150,7 +151,8 @@ export class UserUtils implements UserUtilsInterface {
   async logout(): Promise<boolean> {
     try{
        await store.dispatch('user/logout')
-      store.commit('report/setReport',null)
+        store.commit('report/setReport',null)
+        reportUtils.setDefaultReportTablesData()
       return true
     }catch (e) {
       return false
