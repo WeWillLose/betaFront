@@ -17,7 +17,7 @@ function state(): ReportTableStateInterface {
       {
         name: 'comment',
         required: true,
-        label: 'Коментарии',
+        label: 'Комментарии',
         align: 'left',
         field:'comment'
       },

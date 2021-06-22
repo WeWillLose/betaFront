@@ -1,7 +1,7 @@
 <template>
   <div>
     <q-form>
-      <h5><strong>Иформация об учителе</strong></h5>
+      <h5><strong>Информация об учителе</strong></h5>
       <div class="row q-gutter-md">
         <q-input class="col-12 col-md" label="Фамилия" ref="lastNameField"
                 hint="Можно оставить пустым"

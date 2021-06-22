@@ -10,7 +10,7 @@
       <q-input type="text" label="Отчество" v-model="user.middleName" :rules="[ruleApi.required(),ruleApi.alphaWithRus()]"/>
 
       <div class="row justify-end ">
-        <q-btn label="Зарегистировать" :loading="loading" type="submit" icon="login" unelevated flat
+        <q-btn label="Зарегистрировать" :loading="loading" type="submit" icon="login" unelevated flat
                color="accent"
                class="login_btn_tmp"></q-btn>
       </div>

@@ -19,7 +19,7 @@
                   <div class="row q-gutter-md q-ma-md">
                     <q-input class="col-12" type="text" v-model="getEditedItem.name" label="Название мероприятия"></q-input>
                     <q-input min="0" step="0.5" v-if="userUtils.isCurrentUserChairman()" class="col-12" type="number" v-model="getEditedItem.score"
-                             label="Баллы" :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(0.5,1)]"></q-input>
+                             label="Баллы" :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(0.5,1.5)]"></q-input>
                   </div>
                 </q-card-section>
 

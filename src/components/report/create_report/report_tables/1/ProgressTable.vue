@@ -1,6 +1,6 @@
 <template>
   <div class="q-gutter-sm">
-    <q-table title="1.2 Успеваемость по предметам, не вынессеным на экзамены" :hide-no-data="true"
+    <q-table title="1.2 Успеваемость по предметам, не вынесенным на экзамены" :hide-no-data="true"
              :rows="getRows"
              :columns="getColumns"
              class="bg-transparent no-box-shadow"
@@ -24,7 +24,7 @@
                     <q-input class="col-12" type="text" v-model="getEditedItem.subject"
                              label="Дисциплина"></q-input>
                     <q-input class="col-12" type="number" v-model="getEditedItem.amount"
-                             label="Колво студентов"></q-input>
+                             label="Кол-во студентов"></q-input>
                   </div>
                   <div class="row q-gutter-md  q-ma-md">
                     <q-input class="col-12 col-md" type="number" v-model="getEditedItem.mark5"

@@ -6,7 +6,7 @@
         align="justify"
         narrow-indicator
       >
-        <q-tab name="createUser" icon="fas fa-user" label="Зарегистировать"/>
+        <q-tab name="createUser" icon="fas fa-user" label="Зарегистрировать"/>
         <q-tab name="info" icon="fas fa-user" label="Данные"/>
         <q-tab name="password" icon="password" label="Пароли"/>
         <q-tab name="roles" icon="fas fa-user-shield" label="Роли"/>

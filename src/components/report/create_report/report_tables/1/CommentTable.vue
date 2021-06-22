@@ -1,6 +1,6 @@
 <template>
   <div class="q-gutter-sm">
-    <q-table title="Коментарии" :rows="rows" :columns="columns" :separator="separator" hide-bottom
+    <q-table title="Комментарии" :rows="rows" :columns="columns" :separator="separator" hide-bottom
              class="bg-transparent no-box-shadow"
     >
       <template v-slot:top-right>
@@ -16,7 +16,7 @@
                   <div class="row q-gutter-md q-ma-md">
                     <q-input class="col-12" type="textarea" v-model="getEditedItem.comment" dense maxlength="500" counter autofocus
                              debounce="530"
-                             label="Коментарии"
+                             label="Комментарии"
                              autogrow></q-input>
                     <q-input min="0" step="0.5"
                       v-if="userUtils.isCurrentUserChairman()"

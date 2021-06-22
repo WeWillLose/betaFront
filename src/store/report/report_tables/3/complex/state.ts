@@ -62,7 +62,7 @@ function state(): ReportTableStateInterface {
         score: 0,
       },
       {
-        typework: 'Электронные презентаци',
+        typework: 'Электронные презентации',
         MDK: '',
         smaterials: '',
         score: 0,
@@ -88,7 +88,7 @@ function state(): ReportTableStateInterface {
         score: 0,
       },
       {
-        typework: 'Электронные презентаци',
+        typework: 'Электронные презентации',
         MDK: '',
         smaterials: '',
         score: 0,
