@@ -2,7 +2,6 @@ import {capitalize} from 'lodash'
 import { IUser } from 'src/model/user/User'
 import { ERole } from 'src/model/role/Role'
 import store from 'src/store'
-import jwtUtils from 'src/utils/jwt/JwtUtils';
 
 export interface UserUtilsInterface {
   getCurrentUser():IUser | null
@@ -19,6 +18,7 @@ export interface UserUtilsInterface {
   isCurrentUserAdmin(): boolean
   isCurrentUserChairman(): boolean
   JwtHeaderForCurrentUser():Record<string, string>
+  logout():Promise<boolean>
 }
 export class UserUtils implements UserUtilsInterface {
   capitalizeUserFio(user : IUser):IUser{
@@ -77,7 +77,8 @@ export class UserUtils implements UserUtilsInterface {
   }
 
   isLoggedIn(user: IUser | null | undefined): boolean {
-    return !!user && !!user.token && !jwtUtils.IsExpired(user.token)
+    return !!user && !!user.token;
+
   }
   public getFio(user: IUser | null):string {
     if(!user) return '';
@@ -144,6 +145,17 @@ export class UserUtils implements UserUtilsInterface {
   getCurrentUser(): IUser | null {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     return store.getters['user/getUser'] as  IUser
+  }
+
+  async logout(): Promise<boolean> {
+    try{
+       await store.dispatch('user/logout')
+      store.commit('report/setReport',null)
+      return true
+    }catch (e) {
+      return false
+    }
+
   }
 }
 const userUtils  = new UserUtils();

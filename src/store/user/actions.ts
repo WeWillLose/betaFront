@@ -31,7 +31,7 @@ const actions: ActionTree<UserStateInterface, StateInterface> = {
   // eslint-disable-next-line @typescript-eslint/require-await
   async logout(context){
     try{
-      context.commit('setUser',null);
+      context.commit('setUser',null)
       return true;
     }catch (e) {
       console.error(e)

@@ -114,12 +114,11 @@
         }
         function logout(): void {
           setTimeout(() => {
+            void userUtils.logout().then(isSuccess => {
               // eslint-disable-next-line @typescript-eslint/no-floating-promises
-              store.dispatch('user/logout').then(isSuccess => {
-                // eslint-disable-next-line @typescript-eslint/no-floating-promises
-                if (isSuccess) router.push('/login');
-                else notifyApi.showNegative('Ошибка')
-              });
+              if (isSuccess) router.push('/login');
+              else notifyApi.showNegative('Ошибка')
+            });
             }, 300
           );
         }
