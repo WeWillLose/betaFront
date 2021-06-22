@@ -40,7 +40,7 @@
                     <q-input class="col-12 col-md" type="number" step="0.1" min="0" v-model="getEditedItem.progress"
                              label="Успеваемость (%)"></q-input>
                     <q-input class="col-12 col-md" type="number" step="0.1" min="0" v-model="getEditedItem.quality"
-                             label="Качество зананий (%)"></q-input>
+                             label="Качество знаний (%)"></q-input>
                     <q-input class="col-12" type="textarea" v-model="getEditedItem.unsuccs"
                              label="Неуспевающие"></q-input>
                   </div>
