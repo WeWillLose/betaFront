@@ -5,7 +5,7 @@
 
       <q-input type="text" label="Логин" :rules="[ruleApi.required(),ruleApi.username()]" v-model="user.username"/>
       <q-input type="password" label="Пароль" v-model="user.password" :rules="[ruleApi.required(),ruleApi.password()]"/>
-      <q-input type="text" label="Фамилия" v-model="user.lastName" :rules="[ruleApi.required(),ruleApi.alphaWithRus]"/>
+      <q-input type="text" label="Фамилия" v-model="user.lastName" :rules="[ruleApi.required(),ruleApi.alphaWithRus()]"/>
       <q-input type="text" label="Имя" v-model="user.firstName" :rules="[ruleApi.required(),ruleApi.alphaWithRus()]"/>
       <q-input type="text" label="Отчество" v-model="user.middleName" :rules="[ruleApi.required(),ruleApi.alphaWithRus()]"/>
 
