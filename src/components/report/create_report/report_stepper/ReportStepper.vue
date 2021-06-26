@@ -13,7 +13,7 @@
     <q-step
       :name="1"
       prefix="1"
-      title="Инфорамция"
+      title="Информация"
     >
       <meta-title ref="meta_title"/>
       <q-stepper-navigation>
@@ -46,7 +46,7 @@
     <q-step
       :name="4"
       prefix="4"
-      title="Комменарии"
+      title="Комментарии"
 
     >
       <comment-table ref="comment_table"/>
@@ -95,7 +95,7 @@
     <q-step
       :name="8"
       prefix="8"
-      title="Сохранение учебно-материальной базы, поддержание надлежащих санитарно-гигиенических условий s"
+      title="Сохранение учебно-материальной базы, поддержание надлежащих санитарно-гигиенических условий"
     >
       <class-rooms-table ref="programs_table"/>
       <q-stepper-navigation>
