@@ -1,6 +1,6 @@
 <template>
   <div class="q-gutter-sm">
-    <q-table title="1.1 Успеваемость по предметам, вынессеным на экзамены" :hide-no-data="true" :rows="getRows"
+    <q-table title="1.1 Успеваемость по предметам, вынесенным на экзамены" :hide-no-data="true" :rows="getRows"
              :columns="getColumns"
              class="bg-transparent no-box-shadow"
     >
